@@ -19,8 +19,9 @@ export default {
   },
   computed:{
     getName(){
-      const name = window.sessionStorage.getItem('userName')
-      return (name !== 'admin') ? name : 'Admin'
+      const name = window.sessionStorage.getName('userName')
+      console.log(name)
+      // return (window.sessionStorage.getName('userName') !== 'admin') :  ? 'Admin'
     }
   },
   components: {},

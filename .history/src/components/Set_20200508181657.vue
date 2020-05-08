@@ -20,7 +20,7 @@ export default {
   computed:{
     getName(){
       const name = window.sessionStorage.getItem('userName')
-      return (name !== 'admin') ? name : 'Admin'
+      return (name !== 'admin') : name ? 'Admin'
     }
   },
   components: {},

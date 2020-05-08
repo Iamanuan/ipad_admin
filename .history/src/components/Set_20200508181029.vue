@@ -1,7 +1,7 @@
 <template>
   <div class="set_container">
     <div class="set_box">
-      <span class="user_name">{{getName}}</span>
+      <span class="user_name">后台账号</span>
       <div class="btns">
         <el-button type="primary" @click="loginOut">修改密码</el-button>
         <el-button type="primary" @click="loginOut">退出登录</el-button>
@@ -14,14 +14,8 @@
 export default {
   data() {
     return {
-      name: null // 名称
+      id: null // 用户ID
     };
-  },
-  computed:{
-    getName(){
-      const name = window.sessionStorage.getItem('userName')
-      return (name !== 'admin') ? name : 'Admin'
-    }
   },
   components: {},
   methods: {

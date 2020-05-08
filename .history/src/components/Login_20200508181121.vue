@@ -55,6 +55,7 @@ export default {
         const {data: res} = await this.$http.post('user/login', this.loginForm) // 网络请求
         if (res.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
+        
         // 将登录成功后的token\用户ID\是否是管理员\用户名，保存到客户端的 sessionStorage 中
         window.sessionStorage.setItem('token', res.data.token)
         window.sessionStorage.setItem('id',res.data.id)

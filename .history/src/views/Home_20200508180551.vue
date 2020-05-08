@@ -51,7 +51,7 @@ export default {
   name: 'home',
   data(){
     return {
-      isDataShow: true,
+      isDataShow: false,
       isTranShow: false
     }
   },
@@ -71,11 +71,11 @@ export default {
       switch(index){
         case 0:
           this.isDataShow = true
-          this.isTranShow = false
+          this.isDataShow = false
           break;
         case 1:
           this.isDataShow = false
-          this.isTranShow = true
+          this.isDataShow = true
           break
       }
     }

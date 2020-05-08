@@ -51,7 +51,7 @@ export default {
   name: 'home',
   data(){
     return {
-      isDataShow: true,
+      isDataShow: false,
       isTranShow: false
     }
   },
@@ -70,12 +70,10 @@ export default {
     tabclick(index){
       switch(index){
         case 0:
-          this.isDataShow = true
-          this.isTranShow = false
+          console.log('数据')
           break;
         case 1:
-          this.isDataShow = false
-          this.isTranShow = true
+          console.log('交易')
           break
       }
     }
