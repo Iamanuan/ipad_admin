@@ -24,8 +24,6 @@ Vue.prototype.$echarts = echarts
 
 Vue.config.productionTip = false
 
-Vue.use(VueQriously)
-
 new Vue({
   router,
   render: h => h(App)

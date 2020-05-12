@@ -24,11 +24,8 @@
         </div>
         <!-- 交易 -->
         <div class="user_tran" v-show="isTranShow">
-          <balance></balance>
-          <QRCode></QRCode>
-          <recharge></recharge>
           <!-- 表格-扣费 -->
-          <table-tran />
+          <table-tran-ded />
         </div>
       </div>
     </el-main>
@@ -48,9 +45,6 @@ import TabMenu from "./childComps/TabMenu";
 
 import DataShow from "../components/content/user/DataShow";
 import TableTran from "../components/content/user/TableTran"
-import Balance from "../components/content/user/Balance"
-import QRCode from "../components/content/user/QRCode"
-import Recharge from "../components/content/user/Recharge"
 
 export default {
   name: "home",
@@ -67,10 +61,7 @@ export default {
     LineChart, // 折线图组件
     TableTran, // 用户表格组件
     TabMenu, // 头部 数据、交易 切换组件
-    DataShow, // 用户数据展示组件
-    Balance, // 用户余额组件
-    QRCode, // 二维码组件
-    Recharge, //充值组件
+    DataShow // 用户数据展示组件
   },
   computed: {
   },

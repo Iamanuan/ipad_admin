@@ -28,7 +28,7 @@
           <QRCode></QRCode>
           <recharge></recharge>
           <!-- 表格-扣费 -->
-          <table-tran />
+          <table-tran-ded />
         </div>
       </div>
     </el-main>

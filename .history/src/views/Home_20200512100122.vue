@@ -10,11 +10,11 @@
     <!-- 内容区域 -->
     <el-main>
       <!-- 管理员区域 -->
-      <div v-if="isAdmin === 'true'" class="admin_box">
+      <div class="admin_box" v-if="false">
         管理员区域
       </div>
       <!-- 用户区域 -->
-      <div v-else class="user_box">
+      <div class="user_box" v-else>
         <!-- 数据 -->
         <div class="user_data" v-show="isDataShow">
           <!-- 用户数据展示组件 -->
@@ -24,11 +24,8 @@
         </div>
         <!-- 交易 -->
         <div class="user_tran" v-show="isTranShow">
-          <balance></balance>
-          <QRCode></QRCode>
-          <recharge></recharge>
           <!-- 表格-扣费 -->
-          <table-tran />
+          <table-tran-ded />
         </div>
       </div>
     </el-main>
@@ -43,14 +40,11 @@
 import Set from "../components/Set";
 import Foot from "../components/Foot";
 import LineChart from "../components/LineChart";
+import TableTranDed from "../components/content/user/TableTranDed"
 
 import TabMenu from "./childComps/TabMenu";
 
 import DataShow from "../components/content/user/DataShow";
-import TableTran from "../components/content/user/TableTran"
-import Balance from "../components/content/user/Balance"
-import QRCode from "../components/content/user/QRCode"
-import Recharge from "../components/content/user/Recharge"
 
 export default {
   name: "home",
@@ -65,12 +59,9 @@ export default {
     Set, // 用户设置组件
     Foot, // 底部组件
     LineChart, // 折线图组件
-    TableTran, // 用户表格组件
+    TableTranDed, // 表格组件
     TabMenu, // 头部 数据、交易 切换组件
-    DataShow, // 用户数据展示组件
-    Balance, // 用户余额组件
-    QRCode, // 二维码组件
-    Recharge, //充值组件
+    DataShow // 用户数据展示组件
   },
   computed: {
   },
@@ -89,7 +80,7 @@ export default {
       }
     }
   },
-  created(){
+  mounted(){
     // 判断权限身份
     this.isAdmin = window.sessionStorage.getItem('isAdmin')
     console.log(this.isAdmin)
